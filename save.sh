@@ -11,5 +11,5 @@ echo "git add."
 git add .
 echo "git commit -m $date_stamp"
 git commit -m "$date_stamp"
-echo "git push -u origin master"
+echo "git push -u origin main"
 git push -u origin master
