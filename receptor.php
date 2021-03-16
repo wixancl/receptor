@@ -13,11 +13,11 @@ License: GPL2
 defined('ABSPATH') or die( "Bye bye" );
 
 //Aqui se definen las constantes
-define('RAI_RUTA',plugin_dir_path(__FILE__));
-define('RAI_NOMBRE','Receptor');
+define('RUTA',plugin_dir_path(__FILE__));
+define('NOMBRE','Receptor');
 
 //Archivos externos
-include(RAI_RUTA.'/includes/opciones.php');
+include(RUTA.'/includes/opciones.php');
 
 //Se filtran en el toolbar de TinyMCE nº2 los botones de seleccionar fuente, seleccionar tamano y subrayado.
  function rai_nuevos_botones($botones) 
@@ -27,6 +27,7 @@ include(RAI_RUTA.'/includes/opciones.php');
 	$botones[] = 'underline';
 	return $botones;
 }
+
 add_filter( 'mce_buttons_2','rai_nuevos_botones');
 
 // ***************************************************************************
