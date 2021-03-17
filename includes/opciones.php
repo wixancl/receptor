@@ -12,23 +12,50 @@ add_action( 'admin_menu', 'menu_administrador' );
 // Top level menu del plugin
 function menu_administrador()
 {
-	add_menu_page(
-	NOMBRE,
-	NOMBRE,
-	'manage_options',
-	RUTA . '/admin/configuracion.php'
+	//add_menu_page(
+	//NOMBRE,
+	//NOMBRE,
+	//'manage_options',
+	//RUTA . '/admin/configuracion.php'
 
-	); //Crea el menu
+	//); 
+ 
+//    add_options_page(
+//    NOMBRE,
+//    NOMBRE, 
+//    'manage_options', 
+//    'rai', 
+//    'rai_options'
+ //   ); //Crea la pagina de opciones
+
+
+
+	add_menu_page( 
+		'Receptor', 
+		'Receptor', 
+		'manage_options', 
+		'recep_dato', 
+		'Contenido'
+		//plugin_dir_url(__FILE__).'admin/img/server.svg',
+		//null
+		);
+
+
+
+function Contenido(){
+	echo "<h1>Esto es un contenido</h1>";
+
+}
 
 
 
 
-    add_options_page(
-    NOMBRE,
-    NOMBRE, 
-    'manage_options', 
-    'rai', 
-    'rai_options'
-    ); //Crea la pagina de opciones
+
+
+
+
+
+
+
 }
  ?>
