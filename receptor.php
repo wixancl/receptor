@@ -17,7 +17,10 @@ define('RUTA',plugin_dir_path(__FILE__));
 define('NOMBRE','Receptor');
 
 //Archivos externos
-include(RUTA.'/includes/opciones.php');
+//include(RUTA.'/includes/opciones.php');
+require_once plugin_dir_path(__FILE__) . '/includes/configuracion.php';
+
+
 
 //Se filtran en el toolbar de TinyMCE nº2 los botones de seleccionar fuente, seleccionar tamano y subrayado.
  function rai_nuevos_botones($botones) 

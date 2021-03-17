@@ -35,8 +35,8 @@ function menu_administrador()
 		'Receptor', 
 		'manage_options', 
 		'recep_dato', 
-		'Contenido'
-		//plugin_dir_url(__FILE__).'admin/img/server.svg',
+		'configuracion.php'
+		//plugin_dir_url(__FILE__).'admin/img/icon.png',//icono
 		//null
 		);
 
