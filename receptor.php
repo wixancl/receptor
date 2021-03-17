@@ -48,9 +48,32 @@ function menu_administrador()
 }
 // *************************************************************************************
 
+// *************************************************************************************
+// Funciones para crear una tabla
 
+function CrearTabla()
+{
+    global $wpdb;
+    $sql = 'CREATE TABLE '.$wpdb->prefix.'receptor ('
+        .'col1 DATETIME NOT NULL,'
+        .'col2 VARCHAR(256) NOT NULL,'
+        .'col3 VARCHAR(64) NOT NULL'
+        .');';
+    $wpdb->get_results($sql);
+}
 
+// Funcion para borrar una tabla
+function BorrarTabla()
+{
+    global $wpdb;
+    $sql = 'DROP TABLE '.$wpdb->prefix.'receptor;';
+    $wpdb->get_results($sql);
+}
 
+register_activation_hook(__FILE__, 'CrearTabla');
+register_deactivation_hook(__FILE__, 'BorrarTabla');
+
+// *************************************************************************************
 
 
 
@@ -102,33 +125,6 @@ add_filter( 'mce_buttons_2','rai_nuevos_botones');
 */
 
 
-
-// ***************************************************************************
-// Funciones para crear una tabla
-/*
-function jnj_activation()
-{
-    global $wpdb;
-    $sql = 'CREATE TABLE '.$wpdb->prefix.'receptor ('
-        .'col1 DATETIME NOT NULL,'
-        .'col2 VARCHAR(256) NOT NULL,'
-        .'col3 VARCHAR(64) NOT NULL'
-        .');';
-    $wpdb->get_results($sql);
-}
-
-// Funcion para borrar una tabla
-function jnj_deactivation()
-{
-    global $wpdb;
-    $sql = 'DROP TABLE '.$wpdb->prefix.'receptor;';
-    $wpdb->get_results($sql);
-}
-
-register_activation_hook(__FILE__, 'jnj_activation');
-register_deactivation_hook(__FILE__, 'jnj_deactivation');
-*/
-// ****************************************************************************
 
 
  ?>
