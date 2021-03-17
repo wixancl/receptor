@@ -14,12 +14,76 @@ defined('ABSPATH') or die( "Bye bye" );
 
 
 //Archivos externos
+
+
 //include(RUTA.'/includes/opciones.php');
-require_once plugin_dir_path(__FILE__) . '/includes/configuracion.php';
 
 //Aqui se definen las constantes
 define('RUTA',plugin_dir_path(__FILE__));
 define('NOMBRE','Receptor');
+
+
+// *************************************************************************************
+// El hook admin_menu ejecuta la funcion rai_menu_administrador
+add_action( 'admin_menu', 'menu_administrador' );
+ 
+// Top level menu del plugin
+function menu_administrador()
+{
+	add_menu_page(
+	'Receptor', // Titulo de la Pagina
+	'Receptor Menu', // Titulo del menu
+	'manage_options', //capability
+	'menu_receptor', //menu_slug
+	'Configuracion' // \wp-content\plugins\receptor/admin/configuracion.php
+	); 
+
+	function Configuracion()
+	{
+		echo plugin_dir_path(__FILE__).'includes/configuracion.php';
+	}
+
+
+
+}
+// *************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
