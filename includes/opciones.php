@@ -1,5 +1,5 @@
 <?php
-
+//Evita que un usuario malintencionado ejecute codigo php desde la barra del navegador
 defined('ABSPATH') or die( "Bye bye" );
 
 /*
@@ -34,8 +34,8 @@ function menu_administrador()
 		'Receptor', 
 		'Receptor', 
 		'manage_options', 
-		'recep_dato', 
-		'configuracion.php'
+		'recep_dato' 
+		//'configuracion.php'
 		//plugin_dir_url(__FILE__).'admin/img/icon.png',//icono
 		//null
 		);

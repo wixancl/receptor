@@ -12,17 +12,19 @@ License: GPL2
 //Evita que un usuario malintencionado ejecute codigo php desde la barra del navegador
 defined('ABSPATH') or die( "Bye bye" );
 
-//Aqui se definen las constantes
-define('RUTA',plugin_dir_path(__FILE__));
-define('NOMBRE','Receptor');
 
 //Archivos externos
 //include(RUTA.'/includes/opciones.php');
 require_once plugin_dir_path(__FILE__) . '/includes/configuracion.php';
 
+//Aqui se definen las constantes
+define('RUTA',plugin_dir_path(__FILE__));
+define('NOMBRE','Receptor');
+
 
 
 //Se filtran en el toolbar de TinyMCE nº2 los botones de seleccionar fuente, seleccionar tamano y subrayado.
+/*
  function rai_nuevos_botones($botones) 
  {	
 	$botones[] = 'fontselect';
@@ -31,11 +33,15 @@ require_once plugin_dir_path(__FILE__) . '/includes/configuracion.php';
 	return $botones;
 }
 
+
 add_filter( 'mce_buttons_2','rai_nuevos_botones');
+*/
+
+
 
 // ***************************************************************************
 // Funciones para crear una tabla
-// Funcion para crear una tabla
+/*
 function jnj_activation()
 {
     global $wpdb;
@@ -57,6 +63,7 @@ function jnj_deactivation()
 
 register_activation_hook(__FILE__, 'jnj_activation');
 register_deactivation_hook(__FILE__, 'jnj_deactivation');
+*/
 // ****************************************************************************
 
 
