@@ -57,17 +57,33 @@ function menu_administrador()
 function CrearTabla()
 {
     global $wpdb;
+
+/*
     $sql1 = 'CREATE TABLE '.$wpdb->prefix.'receptor_data ('
         .'col1 DATETIME NOT NULL,'
         .'col2 VARCHAR(256) NOT NULL,'
         .'col3 VARCHAR(64) NOT NULL'
         .');';
+*/
+
+
+    $sql1 = 'CREATE TABLE '.$wpdb->prefix.'receptor_data ('
+    	.'id int (11) AUTO_INCREMENT, '
+        .'fecha DATETIME NOT NULL,'
+        .'datos VARCHAR(256) NOT NULL,'
+        .'PRIMARY KEY (id)'
+        .');';
+
 
     $sql2 = 'CREATE TABLE '.$wpdb->prefix.'receptor_config ('
         .'col1 DATETIME NOT NULL,'
         .'col2 VARCHAR(256) NOT NULL,'
         .'col3 VARCHAR(64) NOT NULL'
         .');';
+
+
+
+
 
     $wpdb->get_results($sql1);
     $wpdb->get_results($sql2);

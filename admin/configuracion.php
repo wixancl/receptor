@@ -1,8 +1,6 @@
 <?php
     global $wpdb;
 
-
-
     $tabla = "{$wpdb->prefix}receptor_data";
     $tabla2 = "{$wpdb->prefix}receptor_config";
 
@@ -42,7 +40,7 @@
 
 
 
-
+    // Datos para seleccionar 
     $query = "SELECT * FROM $tabla";
     $lista_encuestas = $wpdb->get_results($query,ARRAY_A);
     if(empty($lista_encuestas)){
@@ -61,35 +59,26 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <?php echo "<h1 class='wp-heading-inline'>" . get_admin_page_title() . "</h1>"; ?>
         <h4 class="modal-title" id="exampleModalLongTitle">llave</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-          <form method="post">
-
-              <div class="modal-body">
-                  
-                        <div class="form-group">
-                          <label for="txtnombre" class="col-sm-4 col-form-label">llave</label>
-                          <div class="col-sm-8">
-                              <input type="text" id="txtnombre" name="txtnombre" style="width:50%">
-                          </div>
-
-
-
-                        </div>
-          
-   
-
-
+        <form method="post">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="txtnombre" class="col-sm-4 col-form-label">llave</label>
+              <div class="col-sm-8">
+                <input type="text" id="txtnombre" name="txtnombre" style="width:50%">
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" name="btnguardar" id="btnguardar">Guardar</button>
-              </div>
-         </form>
-
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" name="btnguardar" id="btnguardar">Guardar</button>
+          </div>
+        </form>
     </div>
   </div>
 </div>
@@ -97,9 +86,7 @@
 
 
  <div class="wrap">
-        <?php
-             echo "<h1 class='wp-heading-inline'>" . get_admin_page_title() . "</h1>";
-        ?>
+ 
          <a id="btnnuevo" class="page-title-action">Añadir nueva</a>
 
          <br><br><br>
