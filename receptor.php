@@ -30,13 +30,16 @@ add_action( 'admin_menu', 'menu_administrador' );
 // Top level menu del plugin
 function menu_administrador()
 {
-	add_menu_page(
-	'Receptor', // Titulo de la Pagina
-	'Receptor Menu', // Titulo del menu
-	'manage_options', //capability
-	'menu_receptor', //menu_slug
-	'Configuracion' // \wp-content\plugins\receptor/admin/configuracion.php
-	); 
+
+    add_menu_page(
+        'Receptor',//Titulo de la pagina
+        'Receptor Menu',// Titulo del menu
+        'manage_options', // Capability
+        plugin_dir_path(__FILE__).'admin/configuracion.php', //slug
+        null, //function del contenido
+         plugin_dir_url(__FILE__).'admin/img/icon.png',//icono
+         '1' //priority
+    );
 
 	function Configuracion()
 	{
@@ -54,20 +57,31 @@ function menu_administrador()
 function CrearTabla()
 {
     global $wpdb;
-    $sql = 'CREATE TABLE '.$wpdb->prefix.'receptor ('
+    $sql1 = 'CREATE TABLE '.$wpdb->prefix.'receptor_data ('
         .'col1 DATETIME NOT NULL,'
         .'col2 VARCHAR(256) NOT NULL,'
         .'col3 VARCHAR(64) NOT NULL'
         .');';
-    $wpdb->get_results($sql);
+
+    $sql2 = 'CREATE TABLE '.$wpdb->prefix.'receptor_config ('
+        .'col1 DATETIME NOT NULL,'
+        .'col2 VARCHAR(256) NOT NULL,'
+        .'col3 VARCHAR(64) NOT NULL'
+        .');';
+
+    $wpdb->get_results($sql1);
+    $wpdb->get_results($sql2);
 }
 
 // Funcion para borrar una tabla
 function BorrarTabla()
 {
     global $wpdb;
-    $sql = 'DROP TABLE '.$wpdb->prefix.'receptor;';
-    $wpdb->get_results($sql);
+    $sql3 = 'DROP TABLE '.$wpdb->prefix.'receptor_data;';
+    $sql4 = 'DROP TABLE '.$wpdb->prefix.'receptor_config;';
+    
+    $wpdb->get_results($sql3);
+ 	$wpdb->get_results($sql4);
 }
 
 register_activation_hook(__FILE__, 'CrearTabla');
