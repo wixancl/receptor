@@ -13,25 +13,31 @@
     }
 
 
-
-
-      if(isset($_POST['btnguardar'])){
+    if(isset($_POST['txtdato'])){
         
-          $nombre = $_POST['txtdato'];
-          $query = "SELECT id FROM $tabla ORDER BY id DESC limit 1";
-          $resultado = $wpdb->get_results($query,ARRAY_A);
-          $proximoId = $resultado[0]['id'] + 1;
-          $shortcode = "[ENC id='$proximoId']";
+      $ingreso =$_POST['txtdato']; 
 
-          $datos = [
-              'id' => null,
-              'fecha' => $nombre,
-              'dato' => $shortcode
-          ];
-          $respuesta =  $wpdb->insert($tabla,$datos);
+    $sql3 = 'INSERT INTO '.$wpdb->prefix.'receptor_data (datos) VALUES (\''.$ingreso.'\');';
+    $wpdb->get_results($sql3);
 
-    
-      }
+  
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -50,9 +56,9 @@
         <form method="post">
           <div class="modal-body">
             <div class="form-group">
-              <label for="txtnombre" class="col-sm-4 col-form-label">llave</label>
+              <label for="txtnombre" class="col-sm-4 col-form-label"><?php echo $sql3; ?></label>
               <div class="col-sm-8">
-                <input type="text" id="txtdato" name="txtnombre" style="width:50%">
+                <input type="text" id="txtdato" name="txtdato" style="width:25%">
               </div>
             </div>
           </div>
