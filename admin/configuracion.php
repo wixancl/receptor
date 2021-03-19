@@ -16,12 +16,23 @@
     if(isset($_POST['txtdato'])){
         
       $ingreso =$_POST['txtdato']; 
+      
 
-    $sql3 = 'INSERT INTO '.$wpdb->prefix.'receptor_data (datos) VALUES (\''.$ingreso.'\');';
-    $wpdb->get_results($sql3);
+     // $sql3 = 'INSERT INTO '.$wpdb->prefix.'receptor_data (datos) VALUES (\''.$ingreso.'\');';
+     // $wpdb->get_results($sql3);
 
   
+
+      //$wpdb->insert($tabla, array('datos' => 'prueba') );
+
+      $wpdb->insert($tabla, array('datos' => $ingreso) );
+
+
+
     }
+
+
+
 
 
 
@@ -41,6 +52,8 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="txtnombre" class="col-sm-4 col-form-label"><?php echo $sql3; ?></label>
+              </br>
+              <label for="txtnombre" class="col-sm-4 col-form-label"><?php echo $fecha; ?></label>
               <div class="col-sm-8">
                 <input type="text" id="txtdato" name="txtdato" style="width:25%">
               </div>
