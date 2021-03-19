@@ -47,12 +47,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <?php echo "<h1 class='wp-heading-inline'>" . get_admin_page_title() . "</h1>"; ?>
-        <?php 
-//$post_date = get_the_date();
-//$post_date = date('l jS \of F Y h:i:s A');
-        $post_date = date('Y-m-d h:i:s');
-echo 'esta es una dato de fecha'.$post_date;
-?>
+
+
+
       </div>
         <form method="post">
           <div class="modal-body">
