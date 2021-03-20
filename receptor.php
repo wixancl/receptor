@@ -82,12 +82,12 @@ function CrearTabla()
         .');';
 
 
-    $sql3 = 'INSERT INTO '.$wpdb->prefix.'receptor_data (datos) VALUES (1);';
+    //$sql3 = 'INSERT INTO '.$wpdb->prefix.'receptor_data (datos) VALUES (1);';
 
 
     $wpdb->get_results($sql1);
     $wpdb->get_results($sql2);
-    $wpdb->get_results($sql3);
+    //$wpdb->get_results($sql3);
 }
 
 // Funcion para borrar una tabla
@@ -105,40 +105,6 @@ register_activation_hook(__FILE__, 'CrearTabla');
 register_deactivation_hook(__FILE__, 'BorrarTabla');
 
 // *************************************************************************************
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //Se filtran en el toolbar de TinyMCE nº2 los botones de seleccionar fuente, seleccionar tamano y subrayado.
